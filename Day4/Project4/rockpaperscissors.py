@@ -27,28 +27,32 @@ scissors = '''
 
 #Write your code below this line 👇
 import random
-index = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+index = int(input("¿Qué eliges? Escribe 1 para Piedra, 2 por Papel o 3 por Tijeras.\n"))-1
 
-options = [rock, paper, scissors]
-computer = random.choice(options)
-person = options[index]
-
-ndx_person = index
-ndx_computer =  0
-
-if computer == rock:
-  ndx_computer = 0
-elif computer == paper:
-  ndx_computer = 1
+if index >= 3 or index < 0:
+  print('El número que introdujiste es inválido. Perdiste.')
 else:
-  ndx_computer = 2
+  print("Elegiste:")
+  options = [rock, paper, scissors]
+  computer = random.choice(options)
+  person = options[index]
 
-print(options[index])
-print("Computer chose:\n", computer)
+  ndx_person = index
+  ndx_computer =  0
 
-comb1 = ['Draw', 'You win', 'You lose']
-comb2 = ['You lose', 'Draw', 'You win']
-comb3 = ['You win', 'You lose', 'Draw']
-matrix = [comb1, comb2, comb3]
+  if computer == rock:
+    ndx_computer = 0
+  elif computer == paper:
+    ndx_computer = 1
+  else:
+    ndx_computer = 2
 
-print(matrix[ndx_computer][ndx_person])
+  print(options[index])
+  print("La computadora eligió:\n", computer)
+
+  comb1 = ['Empate', 'Ganaste', 'Perdiste']
+  comb2 = ['Perdiste', 'Empate', 'Ganaste']
+  comb3 = ['Ganaste', 'Perdiste', 'Empate']
+  matrix = [comb1, comb2, comb3]
+
+  print(matrix[ndx_computer][ndx_person] + '.')
