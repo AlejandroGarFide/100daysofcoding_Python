@@ -23,4 +23,5 @@ for numeros in range(1,nr_numbers+1):
     contrasena.append(random.choice(numbers))
 
 random.shuffle(contrasena)
-print(''.join(contrasena))
+resultado = ''.join(contrasena)
+print(f'Tu nueva contraseña segura es: {resultado}')
